@@ -27,7 +27,7 @@ export async function POST(req: Request) {
       stream: true,
     });
 
-    const stream = OpenAIStream(response);
+    const stream = OpenAIStream(response as any);
     return new StreamingTextResponse(stream);
   } catch (error) {
     console.error('An unexpected error occurred:', error);
